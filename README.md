@@ -1,16 +1,55 @@
-## Hi there 👋
+ER Diagram Personal finance apps
+       
+```mermaid
+erDiagram
+    USER ||--o{ BANK_ACCOUNT : "owns"
+    BANK_ACCOUNT ||--o{ TRANSACTION : "records"
+    TRANSACTION }o--|| CATEGORY      : "categorized as"
+    USER ||--o{ BUDGET               : "defines"
+    USER ||--o{ GOAL                 : "sets"
+    USER ||--o{ BADGE                : "earns"
 
-<!--
-**Nakoe-g-spot/Nakoe-g-spot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    USER {
+        int    UserId PK
+        string Name
+        string Email
+    }
+    BANK_ACCOUNT {
+        int    AccountId PK
+        string Name
+        string Currency
+        int    UserId FK
+    }
+    TRANSACTION {
+        int     TransactionId PK
+        date    Date
+        decimal Amount
+        int     Type        "0=Expense,1=Income"
+        int     AccountId FK
+        int     CategoryId FK
+    }
+    CATEGORY {
+        int    CategoryId PK
+        string Name
+        string Icon
+    }
+    BUDGET {
+        int     BudgetId PK
+        int     UserId FK
+        int     CategoryId FK
+        decimal Amount
+        string  Period     "e.g. Monthly"
+    }
+    GOAL {
+        int     GoalId PK
+        int     UserId FK
+        decimal TargetAmount
+        date    Deadline
+    }
+    BADGE {
+        int    BadgeId PK
+        int    UserId FK
+        string Title
+        date   AwardedDate
+    }
+```
