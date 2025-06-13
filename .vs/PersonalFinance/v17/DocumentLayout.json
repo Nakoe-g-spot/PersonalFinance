@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\PersonalFinance.API.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PersonalFinance.API\\PersonalFinance.API.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PersonalFinance.API\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PersonalFinance.API\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\Data\\ApplicatonDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PersonalFinance.API\\Data\\ApplicatonDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonalFinance.API.csproj",
+              "DocumentMoniker": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\PersonalFinance.API.csproj",
+              "RelativeDocumentMoniker": "PersonalFinance.API\\PersonalFinance.API.csproj",
+              "ToolTip": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\PersonalFinance.API.csproj",
+              "RelativeToolTip": "PersonalFinance.API\\PersonalFinance.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-13T15:31:48.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicatonDbContext.cs",
+              "DocumentMoniker": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\Data\\ApplicatonDbContext.cs",
+              "RelativeDocumentMoniker": "PersonalFinance.API\\Data\\ApplicatonDbContext.cs",
+              "ToolTip": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\Data\\ApplicatonDbContext.cs",
+              "RelativeToolTip": "PersonalFinance.API\\Data\\ApplicatonDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T15:20:48.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\Program.cs",
+              "RelativeDocumentMoniker": "PersonalFinance.API\\Program.cs",
+              "ToolTip": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\Program.cs",
+              "RelativeToolTip": "PersonalFinance.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T15:11:40.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\appsettings.json",
+              "RelativeDocumentMoniker": "PersonalFinance.API\\appsettings.json",
+              "ToolTip": "D:\\MicrosoftVisualStudioWorkSpace\\PersonalFinance\\PersonalFinance.API\\appsettings.json",
+              "RelativeToolTip": "PersonalFinance.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-13T15:07:47.717Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
