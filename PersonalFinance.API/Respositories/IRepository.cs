@@ -7,7 +7,7 @@ namespace PersonalFinance.API.Repositories
     {
         // Lấy entity theo id (không đồng bộ).
         Task<T?> GetByIdAsync(int id);
-
+        IQueryable<T> Query { get; }
         // Lấy danh sách tất cả các entity.
         Task<IEnumerable<T>> GetAllAsync();
         // Lấy các entity thỏa mãn điều kiện (predicate) truyền vào

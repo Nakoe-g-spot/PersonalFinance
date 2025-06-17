@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using PersonalFinance.API.Models;
 using PersonalFinance.API.Repositories;
 using System.Security.Claims;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+
 
 namespace PersonalFinance.API.Controllers
 {
@@ -17,7 +21,7 @@ namespace PersonalFinance.API.Controllers
         {
             _categoryRepository = categoryRepository;
         }
-
+        
         // POST: api/Categories
         // Tạo mới danh mục giao dịch cho người dùng đang đăng nhập
         [HttpPost]

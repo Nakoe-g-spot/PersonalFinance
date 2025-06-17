@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using PersonalFinance.API.Models;
 using PersonalFinance.API.Repositories;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace PersonalFinance.API.Controllers
 {
@@ -21,6 +23,70 @@ namespace PersonalFinance.API.Controllers
             _transactionRepository = transactionRepository;
             _bankAccountRepository = bankAccountRepository;
         }
+
+
+        // GET: api/Transactions
+        // Lọc và sắp xếp giao dịch theo nhiều tiêu chí
+        [HttpGet("summary")]
+        public async Task<IActionResult> GetTransactions(
+            [FromQuery] DateTime? startDate,
+            [FromQuery] DateTime? endDate,
+            [FromQuery] int? categoryId,
+            [FromQuery] decimal? minAmount,
+            [FromQuery] decimal? maxAmount,
+            [FromQuery] string? transactionType,
+            [FromQuery] string? sortBy
+        )
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrWhiteSpace(userIdClaim))
+                return Unauthorized("Không tìm thấy thông tin người dùng từ token.");
+            int userId = int.Parse(userIdClaim);
+
+            // Bắt đầu truy vấn của người dùng
+            var query = _transactionRepository.Query.Where(t => t.BankAccount!.UserId == userId);
+
+            if (startDate.HasValue)
+                query = query.Where(t => t.TransactionDate >= startDate.Value);
+            if (endDate.HasValue)
+                query = query.Where(t => t.TransactionDate <= endDate.Value);
+            if (categoryId.HasValue)
+                query = query.Where(t => t.CategoryId == categoryId.Value);
+            if (minAmount.HasValue)
+                query = query.Where(t => t.Amount >= minAmount.Value);
+            if (maxAmount.HasValue)
+                query = query.Where(t => t.Amount <= maxAmount.Value);
+            if (!string.IsNullOrEmpty(transactionType))
+            {
+                //Type của Transaction có kiểu string đại diện cho loại giao dịch
+                query = query.Where(t => t.Type.ToLower() == transactionType.ToLower());
+            }
+
+            //tham số truyền vào
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy.ToLower())
+                {
+                    case "date":
+                        query = query.OrderBy(t => t.TransactionDate);
+                        break;
+                    case "amount":
+                        query = query.OrderBy(t => t.Amount);
+                        break;
+                    default:
+                        query = query.OrderBy(t => t.TransactionDate);
+                        break;
+                }
+            }
+            else
+            {
+                query = query.OrderBy(t => t.TransactionDate);
+            }
+
+            var transactions = await query.ToListAsync();
+            return Ok(transactions);
+        }
+
 
         // POST: api/Transactions
         // Tạo mới giao dịch trên một tài khoản ngân hàng thuộc về người dùng hiện tại
@@ -50,7 +116,7 @@ namespace PersonalFinance.API.Controllers
 
         // GET: api/Transactions
         // Lấy danh sách giao dịch của các tài khoản ngân hàng của người dùng hiện tại
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<IActionResult> GetTransactions()
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

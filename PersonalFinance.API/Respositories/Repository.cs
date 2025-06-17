@@ -10,12 +10,15 @@ namespace PersonalFinance.API.Repositories
         private readonly ApplicationDbContext _ctx;
         private readonly DbSet<T> _dbSet;
 
+        // Constructor duy nhất nhận ApplicationDbContext và khởi tạo _ctx và _dbSet.
         public Repository(ApplicationDbContext ctx)
         {
             _ctx = ctx;
-            // DbSet tương ứng với bảng của entity T trong DbContext.
             _dbSet = ctx.Set<T>();
         }
+
+        // Sử dụng _ctx thay cho _context
+        public IQueryable<T> Query => _ctx.Set<T>();
 
         public async Task<T?> GetByIdAsync(int id)
         {

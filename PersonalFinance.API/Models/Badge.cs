@@ -1,22 +1,30 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PersonalFinance.API.Models
 {
-	public class Badge {
-		[Key]
-		public int BadgeId { get; set; }           // ← EF mặc định coi đây là PK
+    public class Badge
+    {
+        [Key]
+        public int BadgeId { get; set; }
 
-		[ForeignKey("User")]
-		public int UserId { get; set; }
-		public required User User { get; set; }             // navigation
+        [Required]
+        public string Name { get; set; } = string.Empty;
 
-		[Required]
-		public required string Title { get; set; }
+        public string? Description { get; set; }
 
-		public DateTime AwardedDate { get; set; }
+        // Có thể dùng để lưu tên file, URL, hoặc mã icon nào đó
+        public string? Icon { get; set; }
 
-		public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime AwardedAt { get; set; } = DateTime.UtcNow;
 
-	}
+        // Liên kết với người dùng - mỗi badge thuộc về một user
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+
+        [JsonIgnore]
+        public User? User { get; set; }
+    }
 }
