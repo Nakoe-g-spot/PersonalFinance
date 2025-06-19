@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "personalfinance-fe:build:production"
+              "buildTarget": "personalfinance-fe:build:production"
             },
             "development": {
-              "browserTarget": "personalfinance-fe:build:development"
+              "buildTarget": "personalfinance-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "personalfinance-fe:build"
+            "buildTarget": "personalfinance-fe:build"
           }
         },
         "test": {
